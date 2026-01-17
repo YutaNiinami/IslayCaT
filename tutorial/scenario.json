@@ -1,0 +1,673 @@
+[
+    {
+        "target": {
+            "id": "dummy_state",
+            "type": "svg"
+        },
+        "event": {
+            "name": "drag",
+            "dropArea": {
+                "x": 400,
+                "y": 400,
+                "r": 50
+            }
+        },
+        "text": {
+            "init": {
+                "jp": "「じょうたい」をつくろう！\nここからドラッグしてね！",
+                "en": "Let's create a “state”!\nDrag it from here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここからドラッグしてね！",
+                "en": "Not there!\nDrag it from here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "dummy_state",
+            "type": "svg"
+        },
+        "event": {
+            "name": "drag",
+            "dropArea": {
+                "x": 800,
+                "y": 400,
+                "r": 50
+            }
+        },
+        "text": {
+            "init": {
+                "jp": "「じょうたい」をつくろう！\nここからドラッグしてね！",
+                "en": "Let's create a “state”!\nDrag it from here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここからドラッグしてね！",
+                "en": "Not there!\nDrag it from here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "state_0",
+            "type": "svg"
+        },
+        "event": {
+            "name": "longPress",
+            "pressTime": 500
+        },
+        "text": {
+            "init": {
+                "jp": "「せんい」を作ろう！\nここをながおししてね！",
+                "en": "Let's create a “transition”!\nPress and hold here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをながおししてね！",
+                "en": "Not there!\nPress and hold here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "state_1",
+            "type": "svg"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "ここをクリック(タップ)してね！",
+                "en": "Click(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "trans_0_triangle",
+            "type": "svg"
+        },
+        "event": {
+            "name": "drag",
+            "dropArea": {
+                "x": 600,
+                "y": 300,
+                "r": 50
+            }
+        },
+        "text": {
+            "init": {
+                "jp": "ここからドラッグしてね！",
+                "en": "Drag it from here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここからドラッグしてね！",
+                "en": "Not there!\nDrag it from here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "state_0",
+            "type": "svg"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "ここをクリック(タップ)してね！",
+                "en": "Click(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "action1_behavior",
+            "type": "select",
+            "option": {
+                "value": "move"
+            }
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "ここをクリック(タップ)して\n「うごく」をえらんでね！",
+                "en": "Click(Tap) here and select “move”!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)して\n「うごく」をえらんでね！",
+                "en": "Not there!\nClick(Tap) here and select “move”!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "lr_move_right",
+            "type": "label"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "ここをクリック(タップ)してね！",
+                "en": "Click(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "move_lr_number_plus",
+            "type": "button"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "すうじを10にしよう！\nここをクリック(タップ)してね！",
+                "en": "Let's set the value to 10!\nClick(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "move_lr_number_plus",
+            "type": "button"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "すうじを10にしよう！\nここをクリック(タップ)してね！",
+                "en": "Let's set the value to 10!\nClick(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "move_lr_number_plus",
+            "type": "button"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "すうじを10にしよう！\nここをクリック(タップ)してね！",
+                "en": "Let's set the value to 10!\nClick(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "move_lr_number_plus",
+            "type": "button"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "すうじを10にしよう！\nここをクリック(タップ)してね！",
+                "en": "Let's set the value to 10!\nClick(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "move_lr_number_plus",
+            "type": "button"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "すうじを10にしよう！\nここをクリック(タップ)してね！",
+                "en": "Let's set the value to 10!\nClick(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "move_lr_number_plus",
+            "type": "button"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "すうじを10にしよう！\nここをクリック(タップ)してね！",
+                "en": "Let's set the value to 10!\nClick(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "move_lr_number_plus",
+            "type": "button"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "すうじを10にしよう！\nここをクリック(タップ)してね！",
+                "en": "Let's set the value to 10!\nClick(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "move_lr_number_plus",
+            "type": "button"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "すうじを10にしよう！\nここをクリック(タップ)してね！",
+                "en": "Let's set the value to 10!\nClick(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "move_lr_number_plus",
+            "type": "button"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "すうじを10にしよう！\nここをクリック(タップ)してね！",
+                "en": "Let's set the value to 10!\nClick(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "move_lr_number_plus",
+            "type": "button"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "すうじを10にしよう！\nここをクリック(タップ)してね！",
+                "en": "Let's set the value to 10!\nClick(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "state_1",
+            "type": "svg"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "ここをクリック(タップ)してね！",
+                "en": "Click(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "action1_behavior",
+            "type": "select",
+            "option": {
+                "value": "move"
+            }
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "ここをクリック(タップ)して\n「うごく」を選んでね！",
+                "en": "Click(Tap) here and select “move”!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)して\n「うごく」を選んでね！",
+                "en": "Not there!\nClick(Tap) here and select “move”!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "move_lr_number_plus",
+            "type": "button"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "すうじを10にしよう！\nここをクリック(タップ)してね！",
+                "en": "Let's set the value to 10!\nClick(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "move_lr_number_plus",
+            "type": "button"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "すうじを10にしよう！\nここをクリック(タップ)してね！",
+                "en": "Let's set the value to 10!\nClick(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "move_lr_number_plus",
+            "type": "button"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "すうじを10にしよう！\nここをクリック(タップ)してね！",
+                "en": "Let's set the value to 10!\nClick(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "move_lr_number_plus",
+            "type": "button"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "すうじを10にしよう！\nここをクリック(タップ)してね！",
+                "en": "Let's set the value to 10!\nClick(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "move_lr_number_plus",
+            "type": "button"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "すうじを10にしよう！\nここをクリック(タップ)してね！",
+                "en": "Let's set the value to 10!\nClick(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "move_lr_number_plus",
+            "type": "button"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "すうじを10にしよう！\nここをクリック(タップ)してね！",
+                "en": "Let's set the value to 10!\nClick(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "move_lr_number_plus",
+            "type": "button"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "すうじを10にしよう！\nここをクリック(タップ)してね！",
+                "en": "Let's set the value to 10!\nClick(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "move_lr_number_plus",
+            "type": "button"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "すうじを10にしよう！\nここをクリック(タップ)してね！",
+                "en": "Let's set the value to 10!\nClick(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "move_lr_number_plus",
+            "type": "button"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "すうじを10にしよう！\nここをクリック(タップ)してね！",
+                "en": "Let's set the value to 10!\nClick(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "move_lr_number_plus",
+            "type": "button"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "すうじを10にしよう！\nここをクリック(タップ)してね！",
+                "en": "Let's set the value to 10!\nClick(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "trans_0_triangle",
+            "type": "svg"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "ここをクリック(タップ)してね！",
+                "en": "Click(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "condition_behavior",
+            "type": "select",
+            "option": {
+                "value": "bumped"
+            }
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "ここをクリック(タップ)して\n「ぶつかった」を選んでね！",
+                "en": "Click(Tap) here and select “bumped”!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)して\n「ぶつかった」を選んでね！",
+                "en": "Not there!\nClick(Tap) here and select “bumped”!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "bumped_right",
+            "type": "label"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "ここをクリック(タップ)してね！",
+                "en": "Click(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "play_button",
+            "type": "button"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "うごかしてみよう！\nここをクリック(タップ)してね！",
+                "en": "Let's play!\nClick(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    }
+]

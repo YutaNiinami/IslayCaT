@@ -1,0 +1,57 @@
+#drawer {
+    position: absolute;
+    right: 0px;
+    top: 100px;
+    height: calc(100% - 100px);
+    display: flex;
+    transition: 0.5s cubic-bezier(0.6, 0.0, 0.4, 1.0);
+    transform: translate(203px, 0);
+    z-index: 1;
+}
+
+#drawer.open {
+    transition: 0.5s cubic-bezier(0.6, 0.0, 0.4, 1.0);
+    transform: translate(0, 0);
+}
+
+#drawer>div[name="button"] {
+    width: 25px;
+    height: 60px;
+    background-color: #Bfff7f;
+    border-top: solid 3px #3fdf00;
+    border-bottom: solid 3px #3fdf00;
+    border-left: solid 3px #3fdf00;
+    border-radius: 10px 0px 0px 10px;
+    margin: auto -3px auto 0px;
+    flex: initial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+#drawer>div[name="content"] {
+    width: 200px;
+    height: 100%;
+    background-color: #Bfff7f;
+    border-left: solid 3px #3fdf00;
+    flex: initial;
+    overflow: auto;
+}
+
+.drawer_character.open>.drawer_state {
+    display: block;
+}
+
+.drawer_character>.drawer_state {
+    display: none;
+}
+
+.drawer_character>.text {
+    padding: 0px 0px 0px 5px;
+    background-color: #6fff00;
+}
+
+.drawer_dialog {
+    background-color: rgb(255, 95, 95);
+}

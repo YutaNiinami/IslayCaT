@@ -1,0 +1,73 @@
+{
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "target": {
+                "type": "string",
+                "description": "対象となるDOMノードのID",
+                "exsample": "state_0"
+            },
+            "event": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "enum": ["start", "drag", "end"],
+                        "description": "イベント名"
+                    }
+                },
+                "dependencies": {
+                    "name": {
+                        "oneOf": [
+                            {
+                                "properties": {
+                                    "name": {
+                                        "enum": ["start"]
+                                    },
+                                    "time": {
+                                        "type": "number",
+                                        "description": "長押しする時間(ms)"
+                                    }
+                                }
+                            },
+                            {
+                                "properties": {
+                                    "name": {
+                                        "enum": ["end"]
+                                    },
+                                    "area": {
+                                        "type": "object",
+                                        "properties": {
+                                            "x": { "type": "number" },
+                                            "y": { "type": "number" },
+                                            "width": { "type": "number" },
+                                            "height": { "type": "number" }
+                                        },
+                                        "description": "ドラッグアンドドロップの移動先範囲(px)"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "description": "イベント"
+            },
+            "text": {
+                "type": "object",
+                "properties": {
+                    "init": {
+                        "type": "string",
+                        "description": "最小に表示する案内テキスト",
+                        "exsample": "「じょうたい」を作ろう！\nボタンをタッチしてね！"
+                    },
+                    "error": {
+                        "type": "string",
+                        "description": "正常な操作でなかった場合に表示する案内テキスト",
+                        "exsample": "そこじゃないよ！\nボタンをタッチしてね！"
+                    }
+                }
+            }
+        }
+    }
+}

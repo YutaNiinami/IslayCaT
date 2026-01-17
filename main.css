@@ -1,0 +1,27 @@
+html,
+body {
+    height: 100%;
+    margin: 0px;
+    overflow: hidden;
+    font-family: sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+    /* テキスト長押しの選択ボックスを無効化 */
+    touch-action: manipulation;
+    -ms-touch-action: manipulation;
+}
+
+/*input[type="number"]の増減ボタンを非表示*/
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+* {
+    line-height: 16px;
+}
+
+.text {
+    font-weight: bold;
+}
