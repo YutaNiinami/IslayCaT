@@ -58,7 +58,7 @@
         },
         "text": {
             "init": {
-                "jp": "「せんい」を作ろう！\nここをながおししてね！",
+                "jp": "「せんい」をつくろう！\nここをながおししてね！",
                 "en": "Let's create a “transition”!\nPress and hold here!"
             },
             "miss": {
@@ -112,6 +112,26 @@
     },
     {
         "target": {
+            "id": "state_1",
+            "type": "svg"
+        },
+        "event": {
+            "name": "longPress",
+            "pressTime": 500
+        },
+        "text": {
+            "init": {
+                "jp": "もう一つ「せんい」をつくろう！\nここをながおししてね！",
+                "en": "Let's create another “transition”!\nPress and hold here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをながおししてね！",
+                "en": "Not there!\nPress and hold here!"
+            }
+        }
+    },
+    {
+        "target": {
             "id": "state_0",
             "type": "svg"
         },
@@ -126,6 +146,87 @@
             "miss": {
                 "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
                 "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "trans_1_triangle",
+            "type": "svg"
+        },
+        "event": {
+            "name": "drag",
+            "dropArea": {
+                "x": 600,
+                "y": 500,
+                "r": 50
+            }
+        },
+        "text": {
+            "init": {
+                "jp": "ここからドラッグしてね！",
+                "en": "Drag it from here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここからドラッグしてね！",
+                "en": "Not there!\nDrag it from here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "state_0",
+            "type": "svg"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "ここをクリック(タップ)してね！",
+                "en": "Click(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target":{
+            "id":"dialog_img",
+            "type":"button"
+        },
+        "event":{
+            "name":"click"
+        },
+        "text":{
+            "init":{
+                "jp":"イラストをかえよう！\nここをクリック(タップ)してね！",
+                "en":"Let's change the illustration!\nClick(Tap) here!"
+            },
+            "miss":{
+                "jp":"そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en":"Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target":{
+            "id":"preset_img_1",
+            "type":"button"
+        },
+        "event":{
+            "name":"click"
+        },
+        "text":{
+            "init":{
+                "jp":"みぎをむいたしょうぼうしゃにかえよう！\nここをクリック(タップ)してね！",
+                "en":"Let's switch to the fire truck facing right!\nClick(Tap) here!"
+            },
+            "miss":{
+                "jp":"そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en":"Not there!\nClick(Tap) here!"
             }
         }
     },
@@ -380,6 +481,44 @@
         }
     },
     {
+        "target":{
+            "id":"dialog_img",
+            "type":"button"
+        },
+        "event":{
+            "name":"click"
+        },
+        "text":{
+            "init":{
+                "jp":"イラストをかえよう！\nここをクリック(タップ)してね！",
+                "en":"Let's change the illustration!\nClick(Tap) here!"
+            },
+            "miss":{
+                "jp":"そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en":"Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target":{
+            "id":"preset_img_0",
+            "type":"button"
+        },
+        "event":{
+            "name":"click"
+        },
+        "text":{
+            "init":{
+                "jp":"ひだりをむいたしょうぼうしゃにかえよう！\nここをクリック(タップ)してね！",
+                "en":"Let's switch to the fire truck facing left!\nClick(Tap) here!"
+            },
+            "miss":{
+                "jp":"そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en":"Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
         "target": {
             "id": "action1_behavior",
             "type": "select",
@@ -392,11 +531,11 @@
         },
         "text": {
             "init": {
-                "jp": "ここをクリック(タップ)して\n「うごく」を選んでね！",
+                "jp": "ここをクリック(タップ)して\n「うごく」をえらんでね！",
                 "en": "Click(Tap) here and select “move”!"
             },
             "miss": {
-                "jp": "そこじゃないよ！\nここをクリック(タップ)して\n「うごく」を選んでね！",
+                "jp": "そこじゃないよ！\nここをクリック(タップ)して\n「うごく」をえらんでね！",
                 "en": "Not there!\nClick(Tap) here and select “move”!"
             }
         }
@@ -623,11 +762,11 @@
         },
         "text": {
             "init": {
-                "jp": "ここをクリック(タップ)して\n「ぶつかった」を選んでね！",
+                "jp": "ここをクリック(タップ)して\n「ぶつかった」をえらんでね！",
                 "en": "Click(Tap) here and select “bumped”!"
             },
             "miss": {
-                "jp": "そこじゃないよ！\nここをクリック(タップ)して\n「ぶつかった」を選んでね！",
+                "jp": "そこじゃないよ！\nここをクリック(タップ)して\n「ぶつかった」をえらんでね！",
                 "en": "Not there!\nClick(Tap) here and select “bumped”!"
             }
         }
@@ -635,6 +774,66 @@
     {
         "target": {
             "id": "bumped_right",
+            "type": "label"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "ここをクリック(タップ)してね！",
+                "en": "Click(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "trans_1_triangle",
+            "type": "svg"
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "ここをクリック(タップ)してね！",
+                "en": "Click(Tap) here!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)してね！",
+                "en": "Not there!\nClick(Tap) here!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "condition_behavior",
+            "type": "select",
+            "option": {
+                "value": "bumped"
+            }
+        },
+        "event": {
+            "name": "click"
+        },
+        "text": {
+            "init": {
+                "jp": "ここをクリック(タップ)して\n「ぶつかった」をえらんでね！",
+                "en": "Click(Tap) here and select “bumped”!"
+            },
+            "miss": {
+                "jp": "そこじゃないよ！\nここをクリック(タップ)して\n「ぶつかった」をえらんでね！",
+                "en": "Not there!\nClick(Tap) here and select “bumped”!"
+            }
+        }
+    },
+    {
+        "target": {
+            "id": "bumped_left",
             "type": "label"
         },
         "event": {

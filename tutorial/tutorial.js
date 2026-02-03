@@ -20,7 +20,7 @@ class Tutorial {
                 return response.json();
             })
             .then(json => {
-                console.log("JSONが正常に読み込まれました。\n", json);
+                console.log("チュートリアルシナリオが正常に読み込まれました。\n", json);
                 /** @type {Array} 読み込んだJSON形式(オブジェクトの配列)のチュートリアルシナリオ */
                 this.scenario = json;
 
@@ -70,6 +70,7 @@ class Tutorial {
         this.grayLayer.style.backgroundColor = this.GRAY_LAYER_COLOR;
 
         /** 灰色レイヤーにイベントを設定 */
+        this.grayLayer.addEventListener("click", () => { this.failure(); });
 
         /** svgコンテナを用意 */
         this.svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -102,6 +103,9 @@ class Tutorial {
             this.uniquifyId(this.clone);
             /** スタイルをコピー */
             this.copyComputedStyles(this.target, this.clone);
+            /** クローンのmarginを削除 */
+            this.clone.style.margin = "";
+            this.clone.style.marginBlock = "";
             /** ターゲットと重なる位置に移動 */
             this.moveClone();
             /** ターゲットごとに処理 */
