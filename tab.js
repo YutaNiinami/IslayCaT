@@ -30,13 +30,10 @@ class TabManager {
         TabsData.tabs.forEach(tab => {
             this.tabContents.createTab(tab);
         });
-        this.addButton.call(
-            d3.drag()
-                .on("start", () => {
-                    const checkedTab = this.tabs.getCheckedTab();
-                    this.tabContents.createTab(checkedTab);
-                })
-        );
+        this.addButton.on("click", () => {
+            const checkedTab = this.tabs.getCheckedTab();
+            this.tabContents.createTab(checkedTab);
+        });
     }
 
     // タブを変更するメソッド
@@ -188,7 +185,7 @@ class TabContents {
     getCheckedCharacterId() {
         const checkedCharacterId = this.contents[0].contents
             .find((character) => character.getChecked()).id;
-        
+
         return checkedCharacterId;
     }
 

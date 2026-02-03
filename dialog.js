@@ -26,8 +26,10 @@ class DialogManager {
             this.updateDialog();
         });
         // 画像を表示する要素を追加
-        column0.append("img")
+        const img = column0.append("img")
+            .attr("id", "dialog_img")
             .classed("dialog_img", true);
+        img.on("click", () => { imageManager.dialogShow(); });
 
         // 「状態」のアクションとおんせいを表示する列を追加
         const column1 = this.stateDialog.append("div")
@@ -831,6 +833,7 @@ class DialogManager {
         const characterSelect = parent.append("span")
             .attr("name", "character")
             .append("select")
+            .attr("id", "character_select")
             .classed("text", true)
             .attr("name", "character");
         characterSelect.selectAll("option")

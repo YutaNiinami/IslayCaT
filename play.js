@@ -1,20 +1,10 @@
-// 画像をBase64形式で読み込む
-const loadImageAsBase64 = async (imgPath) =>
-    await fetch(imgPath)
-        .then(response => response.blob())
-        .then(blob => new Promise(resolve => {
-            const fr = new FileReader();
-            fr.onloadend = () => resolve(fr.result);
-            fr.readAsDataURL(blob);
-        }));
-
 // 実行系を動かすクラス
 class Play {
     constructor(parent) {
         this.parent = parent;
         this.playerData = {
-            width: "960",
-            height: "640"
+            width: "600",
+            height: "400"
         };
         this.createElement();
     }
@@ -178,40 +168,15 @@ class Play {
                         break;
                 }
                 stateData.action2 = value;
-
                 // 画像データの変換
-                // const imgPromise = (async () => {
-                //     return await loadImageAsBase64(state.data.img);
-                // })();
-                // imgPromise.then(newImg => {
-                //     const findImgIdx = Object.values(convertedData.imgs).findIndex(img => img === newImg);
-                //     if (findImgIdx === -1) {
-                //         const newKey = Object.keys(convertedData.imgs).length;
-                //         convertedData.imgs[newKey] = newImg;
-                //         stateData.img = newKey;
-                //     } else {
-                //         stateData.img = findImgIdx;
-                //     }
-                // });
-                const newImg = await loadImageAsBase64(state.data.img);
-                const findImgIdx = Object.values(convertedData.imgs).findIndex(img => img === newImg);
+                const findImgIdx = Object.values(convertedData.imgs).findIndex(img => img === state.data.img);
                 if (findImgIdx === -1) {
                     const newKey = Object.keys(convertedData.imgs).length;
-                    convertedData.imgs[newKey] = newImg;
+                    convertedData.imgs[newKey] = state.data.img;
                     stateData.img = newKey;
                 } else {
                     stateData.img = findImgIdx;
                 }
-
-                // const findImgIdx = Object.values(convertedData.imgs).findIndex(img => img === state.data.img);
-                // if (findImgIdx === -1) {
-                //     const newKey = Object.keys(convertedData.imgs).length;
-                //     convertedData.imgs[newKey] = state.data.img;
-                //     stateData.img = newKey;
-                // } else {
-                //     stateData.img = findImgIdx;
-                // }
-
 
                 // 「遷移」データの変換
                 state.transes.forEach((trans, k) => {
@@ -259,10 +224,6 @@ class Play {
             }
             convertedData.character_tabs[i] = characterData;
         }
-        // this.diagramData.character.forEach((character, i) => {
-        //     character.states.forEach(async (state, j) => {
-        //     });
-        // });
 
         // グループデータの変換
         this.diagramData.group.forEach((group, i) => {

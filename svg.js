@@ -1,13 +1,3 @@
-// // 画像をBase64形式で読み込む
-// const loadImageAsBase64 = async (imgPath) =>
-//     await fetch(imgPath)
-//         .then(response => response.blob())
-//         .then(blob => new Promise(resolve => {
-//             const fr = new FileReader();
-//             fr.onloadend = () => resolve(fr.result);
-//             fr.readAsDataURL(blob);
-//         }));
-
 // svgマネージャー
 class SvgManager {
     constructor() {
@@ -190,7 +180,7 @@ class CreateStateRect {
             .style("stroke", "#3fdf00")
             .style("stroke-width", "3px");
         this.dummyState = this.svg.element.append("image")
-            .attr("id", "dummy_state")
+            .attr("id", `dummy_state_${this.svg.canvas.getId()}`)
             .attr("href", "img/dummy_state(100,167).png")
             .attr("x", window.innerWidth - 90)
             .attr("y", 23)
@@ -266,7 +256,7 @@ class State {
         this.id = State.generateId();
         this.data = {
             name: language.state[lang] + this.id,
-            img: "img/neko.png",
+            img: imageManager.getImageData(193), // デフォルトの画像
             action1: { value: "none", text: language.action1[lang] + ":" + language.state_none[lang] },
             action2: { value: "none", text: language.action2[lang] + ":" + language.state_none[lang] },
             se: { value: "none", text: language.se[lang] + ":" + language.state_none[lang] }
@@ -305,16 +295,7 @@ class State {
             .attr("y", 35)
             .attr("width", 60)
             .attr("height", 60)
-        .attr("href", this.data.img);
-        // // 画像をロード
-        // const imgPromise = (async () => {
-        //     return await loadImageAsBase64(this.data.img);
-        // })();
-        // imgPromise.then(img => {
-        //     this.state.property("src", img);
-        //     this.state.attr("src", img);
-        //     console.log(this.state.attr("src"));            
-        // });
+            .attr("href", this.data.img);
         // テキストと座標データを設定
         const textData = [
             { class: "name", y: 25, text: this.data.name },
