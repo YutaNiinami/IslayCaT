@@ -1,5 +1,5 @@
-const LANG = "jp";
-// const LANG = "en";
+// 初期設定は日本語
+const LANG = new URLSearchParams(window.location.search).get("lang") || "jp";
 
 /** チュートリアルプログラムを定義したクラス */
 class Tutorial {
@@ -671,3 +671,4 @@ class Pointer {
 
 /** ページの読み込み完了後、チュートリアルプログラムを読み込む */
 window.addEventListener("load", () => { new Tutorial(); });
+
