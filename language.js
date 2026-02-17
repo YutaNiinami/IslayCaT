@@ -1,5 +1,6 @@
 // 初期設定は日本語
 let lang = new URLSearchParams(window.location.search).get("lang") || "jp";
+console.log(`言語設定は${window.location.search}${lang}です。`);
 
 // 言語のオブジェクトを作成
 language = new Object();
@@ -73,4 +74,5 @@ language.notice = {en: "notice", jp: "おしらせがきた"};
 language.times = {en: "", jp: "回"};
 
 language.parent = {en: "parent", jp: "おや"};
+
 
