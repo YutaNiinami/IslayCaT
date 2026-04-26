@@ -355,7 +355,6 @@ class Tutorial {
                     console.log("clone:pointerdown");
                     startX = event.clientX;
                     startY = event.clientY;
-                    console.log(startX, startY);
                     if (this.scenario[this.scenarioNow].target.type !== "svg") {
                         cloneX = this.clone.offsetLeft;
                         cloneY = this.clone.offsetTop;
@@ -398,7 +397,6 @@ class Tutorial {
                         } else {
                             const newTransform = `matrix(${transform.slice(0, 4).join(",")},${transform[4] + event.clientX - startX},${transform[5] + event.clientY - startY})`;
                             this.clone.setAttribute("transform", newTransform);
-                            console.log(this.clone.getAttribute("transform"));
                         }
                     }
                 });
@@ -415,7 +413,6 @@ class Tutorial {
                             this.target.dispatchEvent(pointerup);
                             this.success();
                         } else {
-                            console.log(this.clone.getAttribute("transform"));
                             this.copyComputedStyles(this.target, this.clone);
                             this.moveClone();
                             clearTimeout(pressTimer);
