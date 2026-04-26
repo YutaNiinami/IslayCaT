@@ -190,35 +190,34 @@ class CreateStateRect {
         // イベントを設定
         let pointerdown = false;
         let startX, startY;
-        this.dummyState
-            .on("pointerdown", () => {
-                pointerdown = true;
-                // 初期座標を格納
-                startX = d3.event.clientX;
-                startY = d3.event.clientY;
-                // ダミーを拡大
-                this.dummyState.attr("width", 150)
-                    .attr("transform", "translate(-50,-20)");
-            })
-            .on("pointermove", () => {
-                if (pointerdown) {
-                    // ダミーを移動
-                    this.dummyState.attr("transform", `translate(${-50 + d3.event.clientX - startX},${-20 + d3.event.clientY - startY})`);
-                }
-            })
-            .on("pointerup", () => {
-                // 状態作成用の角丸四角の座標を取得
-                const left = this.createStateRect.attr("x");
-                const bottom = this.createStateRect.attr("y") + this.createStateRect.attr("height");
-                // 状態作成用の角丸四角から外れていたら「状態」を作成
-                if ((d3.event.x < left && d3.event.y > 0) || d3.event.y > bottom) {
-                    this.svg.createState(d3.event.offsetX, d3.event.offsetY);
-                }
-                // 初期化
-                this.dummyState.attr("width", 50)
-                    .attr("transform", "translate(0,0)");
-                pointerdown = false;
-            });
+        this.dummyState.node().addEventListener("pointerdown", (event) => {
+            pointerdown = true;
+            // 初期座標を格納
+            startX = event.clientX;
+            startY = event.clientY;
+            // ダミーを拡大
+            this.dummyState.attr("width", 150)
+                .attr("transform", "translate(-50,-20)");
+        });
+        this.dummyState.node().addEventListener("pointermove", (event) => {
+            if (pointerdown) {
+                // ダミーを移動
+                this.dummyState.attr("transform", `translate(${-50 + event.clientX - startX},${-20 + event.clientY - startY})`);
+            }
+        });
+        this.dummyState.node().addEventListener("pointerup", (event) => {
+            // 状態作成用の角丸四角の座標を取得
+            const left = this.createStateRect.attr("x");
+            const bottom = this.createStateRect.attr("y") + this.createStateRect.attr("height");
+            // 状態作成用の角丸四角から外れていたら「状態」を作成
+            if ((event.x < left && event.y > 0) || event.y > bottom) {
+                this.svg.createState(event.offsetX, event.offsetY);
+            }
+            // 初期化
+            this.dummyState.attr("width", 50)
+                .attr("transform", "translate(0,0)");
+            pointerdown = false;
+        });
     }
     // 状態作成用の角丸四角とダミーの状態を移動させるメソッド
     move() {
