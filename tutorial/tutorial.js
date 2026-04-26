@@ -250,6 +250,8 @@ class Tutorial {
         let isLongPress = false;
         let isMiss = false;
         let pressTimer = null;
+        let firstX = 0;
+        let firstY = 0;
         let startX = 0;
         let startY = 0;
         let cloneX = 0;
@@ -350,15 +352,14 @@ class Tutorial {
                     isPointerDown = true;
                     isPointerMove = false;
                     isLongPress = false;
-                    isMiss = false;
                     console.log("clone:pointerdown");
                     startX = event.clientX;
                     startY = event.clientY;
+                    console.log(startX, startY);
                     if (this.scenario[this.scenarioNow].target.type !== "svg") {
                         cloneX = this.clone.offsetLeft;
                         cloneY = this.clone.offsetTop;
                     }
-
                     pressTimer = setTimeout(() => {
                         isLongPress = true;
                         console.log("clone:longPress");
@@ -372,14 +373,16 @@ class Tutorial {
                         if (!isPointerMove) {
                             isPointerMove = true;
                             clearTimeout(pressTimer);
-                            const pointerdown = new MouseEvent("pointerdown", {
-                                bubbles: true,
-                                cancelable: true,
-                                clientX: startX,
-                                clientY: startY,
-                                button: 0
-                            });
-                            this.target.dispatchEvent(pointerdown);
+                            if (!isMiss) {
+                                const pointerdown = new MouseEvent("pointerdown", {
+                                    bubbles: true,
+                                    cancelable: true,
+                                    clientX: startX,
+                                    clientY: startY,
+                                    button: 0
+                                });
+                                this.target.dispatchEvent(pointerdown);
+                            }
                             this.copyComputedStyles(this.target, this.clone);
                             if (this.scenario[this.scenarioNow].target.type === "svg") {
                                 this.moveClone();
@@ -395,6 +398,7 @@ class Tutorial {
                         } else {
                             const newTransform = `matrix(${transform.slice(0, 4).join(",")},${transform[4] + event.clientX - startX},${transform[5] + event.clientY - startY})`;
                             this.clone.setAttribute("transform", newTransform);
+                            console.log(this.clone.getAttribute("transform"));
                         }
                     }
                 });
@@ -402,23 +406,26 @@ class Tutorial {
                     console.log("clone:pointerup");
                     if (isPointerDown && !isLongPress && !isPointerMove) {
                         this.copyComputedStyles(this.target, this.clone);
+                        this.moveClone();
                         clearTimeout(pressTimer);
                         this.failure();
-                    } else if (!isMiss) {
+                    } else {
                         if ((eventObj.dropArea.x - event.offsetX) ** 2 + (eventObj.dropArea.y - event.offsetY) ** 2 <= eventObj.dropArea.r ** 2) {
                             const pointerup = new event.constructor(event.type, event);
                             this.target.dispatchEvent(pointerup);
                             this.success();
                         } else {
+                            console.log(this.clone.getAttribute("transform"));
                             this.copyComputedStyles(this.target, this.clone);
+                            this.moveClone();
                             clearTimeout(pressTimer);
                             this.failure();
+                            isMiss = true;
                         }
                     }
                     isPointerDown = false;
                     isPointerMove = false;
                     isLongPress = false;
-                    isMiss = false;
                 });
                 break;
             default:
